@@ -1,0 +1,46 @@
+.lucky-numbers-list {
+    overflow: hidden;
+
+    .lucky-numbers {
+        border-bottom: #ccc solid 1px;
+        height: 50px;
+        font-size: 14px;
+        float: left;
+        padding-left: 10px;
+        padding-right: 50px;
+    }
+}
+
+.red-zone {
+    display: inline-block;
+
+    .red-ball {
+        width: 30px;
+        height: 30px;
+        background-color: #f33;
+        color: #fff;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+        line-height: 30px;
+    }
+}
+.blue-zone {
+    display: inline-block;
+    .ball {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #00f;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-weight: 300;
+        margin-top: 10px;
+    }
+}
+.matched-ball {
+    background-color: #033 !important;
+}
