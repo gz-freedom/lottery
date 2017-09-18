@@ -7,6 +7,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class PrettyNumbers implements PipeTransform {
 
     transform(value: string) {
-
+        console.log(value);
     }
 }

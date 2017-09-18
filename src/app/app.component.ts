@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LuckyNumbersComponent } from "./lucky-numbers/lucky-numbers.component";
 import { AppService } from "./app.service";
-import { Observable } from "rxjs/observable";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { Observable } from "rxjs/observable";
 export class AppComponent implements OnInit {
   title = '双色球兑奖系统';
   luckyNumbers;
-  latestLotteryNumbers;
+  latestLotteryNumbers: string = "";
 
   constructor(
     private appService: AppService

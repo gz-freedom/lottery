@@ -6,12 +6,14 @@ import { ApiService } from "./api.service";
 import { AppComponent } from './app.component';
 import { LotteryNumbersComponent } from "./lottery-numbers.component";
 import { AppDirective } from "./app.directive";
+import { LuckyNumbersComponent } from './lucky-numbers/lucky-numbers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LotteryNumbersComponent,
-    AppDirective
+    AppDirective,
+    LuckyNumbersComponent
   ],
   imports: [
     BrowserModule,

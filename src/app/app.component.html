@@ -8,25 +8,24 @@
   <div class="page-content row">
     <div class="col-sm-4 left-zone">
       <h2 class="text-warning">我的跟号</h2>
-      <ul class="list-unstyled lucky-numbers-list">
-        <li class="lucky-numbers" *ngFor="let numbers of luckyNumbers">
-          <lottery-numbers [lotteryNumbers]="numbers" [matchedNumbers]="latestLotteryNumbers"></lottery-numbers>
-        </li>
-      </ul>
+      <app-lucky-numbers [matchedBalls]="latestLotteryNumbers"></app-lucky-numbers>
     </div>
     <div class="col-sm-8 right-zone">
       <div class="bg"></div>
       <div class="result-placeholder">
+        <div class="draw-note" *ngIf="!latestLotteryNumbers">
+          <h3 class="text-center">点击下面按钮获取最新一期的开奖结果</h3>
+        </div>
         <div class="draw-result" *ngIf="latestLotteryNumbers">
           <h2 class="result-title">最新一期开奖结果如下：</h2>
           <ul class="list-unstyled">
             <li>期数：{{ latestLotteryNumbers.expect }}</li>
             <li>开奖时间：{{ latestLotteryNumbers.opentime }}</li>
-            <li>开奖号码：<lottery-numbers [lotteryNumbers]="latestLotteryNumbers.opencode"></lottery-numbers></li>
+            <li>开奖号码：{{ latestLotteryNumbers.opencode }}</li>
           </ul>
         </div>
       </div>
-      <button class="btn-draw" (click)="getLatestLotteryNumbers()">获取最新开奖结果</button>
+      <button class="btn-draw" (click)="getLatestLotteryNumbers()">开奖</button>
     </div>
   </div>
   <div class="page-footer">
