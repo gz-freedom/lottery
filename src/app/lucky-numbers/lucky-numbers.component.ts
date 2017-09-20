@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from "../app.service";
 
 @Component({
@@ -7,9 +7,9 @@ import { AppService } from "../app.service";
   styleUrls: ['./lucky-numbers.component.scss']
 })
 export class LuckyNumbersComponent implements OnInit {
-  @Input() matchedBalls: string = "";
   luckyNumbers: any[] = [];
 
+  latestLotteryNumbers: string = "";
   matchedBlue: string = "0";
   matchedRed: any[] = [];
 
@@ -28,14 +28,14 @@ export class LuckyNumbersComponent implements OnInit {
         blueBall: blueBall
       });
     });
-    
-    if(this.matchedBalls) {
-      this.matchedBlue = this.matchedBalls.split("+")[1];
-      this.matchedRed = this.matchedBalls.split("+")[0].split(",");
-    }
   }
   
   isMatchedRedBall(redBall) {
-    return this.matchedBalls && !this.matchedRed.includes(redBall);
+    return this.latestLotteryNumbers && !this.matchedRed.includes(parseInt(redBall));
+  }
+  updateLottery(latestLotteryNumbers) {
+    this.latestLotteryNumbers = latestLotteryNumbers;
+    this.matchedBlue = latestLotteryNumbers.split("+")[1];
+    this.matchedRed = latestLotteryNumbers.split("+")[0].split(",").map(s => parseInt(s, 10));
   }
 }
