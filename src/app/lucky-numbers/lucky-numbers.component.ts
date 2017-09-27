@@ -10,7 +10,7 @@ export class LuckyNumbersComponent implements OnInit {
   luckyNumbers: any[] = [];
 
   latestLotteryNumbers: string = "";
-  matchedBlue: string = "0";
+  matchedBlue: number = 0;
   matchedRed: any[] = [];
 
   constructor(
@@ -22,7 +22,7 @@ export class LuckyNumbersComponent implements OnInit {
 
     luckyNumbers.forEach((balls) => {
       let redBalls = balls.split("+")[0];
-      let blueBall = balls.split("+")[1];
+      let blueBall = +balls.split("+")[1];
       this.luckyNumbers.push({
         redBalls: redBalls.split(","),
         blueBall: blueBall
@@ -35,7 +35,7 @@ export class LuckyNumbersComponent implements OnInit {
   }
   updateLottery(latestLotteryNumbers) {
     this.latestLotteryNumbers = latestLotteryNumbers;
-    this.matchedBlue = latestLotteryNumbers.split("+")[1];
+    this.matchedBlue = parseInt(latestLotteryNumbers.split("+")[1], 10);
     this.matchedRed = latestLotteryNumbers.split("+")[0].split(",").map(s => parseInt(s, 10));
   }
 }
