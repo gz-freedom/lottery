@@ -15,6 +15,7 @@
       <div class="result-placeholder">
         <div class="draw-note" *ngIf="!latestLotteryNumbers">
           <h3 class="text-center">点击下面按钮获取最新一期的开奖结果</h3>
+          <button class="btn-draw" (click)="getLatestLotteryNumbers()">兑奖</button>
         </div>
         <div class="draw-result" *ngIf="latestLotteryNumbers">
           <h2 class="result-title">最新一期开奖结果如下：</h2>
@@ -23,9 +24,9 @@
             <li>开奖时间：{{ latestLotteryNumbers.opentime }}</li>
             <li>开奖号码：{{ latestLotteryNumbers.opencode }}</li>
           </ul>
+          <button class="btn btn-warning btn-lg" (click)="getLatestLotteryNumbers()">重新兑奖</button>
         </div>
       </div>
-      <button class="btn-draw" (click)="getLatestLotteryNumbers()">开奖</button>
     </div>
   </div>
   <div class="page-footer">

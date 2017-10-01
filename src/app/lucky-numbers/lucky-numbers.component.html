@@ -4,7 +4,7 @@
         <span class="red-ball" *ngFor="let redBall of balls.redBalls" [ngClass]="{ 'unmatched-ball': isMatchedRedBall(redBall) }">{{ redBall }}</span>
     </div>
     <div class="blue-zone">
-        <span class="ball" [ngClass]="{ 'unmatched-ball': (matchedBlue !== '0' && matchedBlue !== balls.blueBall) }">{{ balls.blueBall }}</span>
+        <span class="ball" [ngClass]="{ 'unmatched-ball': (matchedBlue !== 0 && matchedBlue !== balls.blueBall) }">{{ balls.blueBall }}</span>
     </div>
   </li>
 </ul>
